@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate weight</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <style>
+        /* body {
+            background: url(galaxy.gif) center/cover fixed;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            color: white;
+        }
+        #mass, #selectPlanet {
+            width: 300px;
+            height: 30px;
+            margin: 10px;
+        }
+        button {
+            width: 200px;
+            height: 30px;
+            border-radius: 5px;
+        }
+        img {
+            max-width: 400px;
+            max-height: 400px;
+            display: block;
+            margin: 20px auto;
+        }
+        .resultWeight {
+            font-size: 25px;
+            margin-top: 20px;
+        } */
+    </style> -->
+</head>
+<body>
+    <h1>Calculate a weight of an object on planet</h1>
+    <div>
+        <input type="number" id="mass" placeholder="Mass in kilogram">
+        <select id="selectPlanet">
+            <option disabled selected>--Select a planet--</option>
+            <option value="earth">EARTH</option>
+            <option value="mercury">MERCURY</option>
+            <option value="venus">VENUS</option>
+            <option value="mars">MARS</option>
+            <option value="jupiter">JUPITER</option>
+            <option value="saturn">SATURN</option>
+            <option value="uranus">URANUS</option>
+            <option value="neptune">NEPTUNE</option>
+        </select>
+        <button onclick="calculateWeight()">Calculate weight</button>
+    </div>
+    <div>
+        <img id="resultPlanet" style="display: none;">
+        <div class="resultWeight" id="resultWeight"></div>
+    </div>
+    <script src="function.js"></script>
+    <!-- <script>
+        function calculateWeight() {
+            const mass = parseFloat(document.getElementById('mass').value),
+                  planet = document.getElementById('selectPlanet').value,
+                  resultWeight = document.getElementById('resultWeight'),
+                  resultPlanet = document.getElementById('resultPlanet')
+
+            if (!mass || !planet) {
+                resultWeight.textContent = "Please enter your weight and select a planet"
+                return
+            }
+
+            const gravityFactors = {
+                mercury: 0.38, venus: 0.91, earth: 1, mars: 0.38, jupiter: 2.34, 
+                saturn: 1.06, uranus: 0.92, neptune: 1.19
+            },
+            planetImages = {
+                mercury: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mercury_in_true_color.jpg/240px-Mercury_in_true_color.jpg",
+                venus: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg",
+                earth: "https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg",
+                mars: "https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg",
+                jupiter: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg",
+                saturn: "https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg",
+                uranus: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg",
+                neptune: "https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg"
+            }
+
+            const weightOnPlanet = (mass * gravityFactors[planet]).toFixed(2)
+            resultWeight.textContent = `Your weight on ${planet.charAt(0).toUpperCase() + planet.slice(1)} is ${weightOnPlanet} kg.`
+            resultPlanet.src = planetImages[planet]
+            resultPlanet.style.display = "block"
+        }
+    </script> -->
+</body>
+</html>
